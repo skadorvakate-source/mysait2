@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+*{
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: bisque;
+    padding: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+section
+{
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1{
+    font-size: 50px;
+    word-break: break-all;
+
+}
+.row
+{
+    margin: 8px -16px;
+}
+
+.row, .row> .column
+{
+    padding: 8px;
+}
+
+.column
+{
+    float: left;
+    width: 25%;
+}
+.row::after
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.content
+{
+    padding: 10px;
+    background-color: aliceblue;
+}
+
+img
+{
+    width: 100%;
+}
+
+@media screen  and (max-width:900px)
+{
+    .column
+{
+    width: 50%;
+
+}
+body{
+    background-color: blue;
+}
+
+
+}
+
+@media screen  and (max-width:600px)
+{
+    .column
+{
+    width: 100%;
+    
+}
+}
+
+body{
+    margin: 0;
+    padding-top: 80px;
+}
+
+.top-nav
+{
+    background: linear-gradient(135deg,#ff6b6b,#ff8e53);
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+}
+
+.nav-container
+{
+   max-width: 1000px; 
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 20px;
+
+
+}
+.logo
+{
+color:white;
+font-size: 24px;
+font-weight: bold;
+padding: 15px 0;
+text-decoration: none;
+transition: transform 0.3s;
+}
+.logo:hover{
+    transform: scale(1.05);
+}
+.nav-links
+{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-links li
+{
+    margin: 0;
+}
+
+.nav-links a
+{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 20px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+.nav-links a:hover
+{
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.burger
+{
+    display: none;
+   cursor: pointer;
+   flex-direction: column;
+   padding: 20px 0;
+
+
+}
+
+.burger span
+{
+    width: 28px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.burger.active span:nth-child(1)
+{
+transform: rotate(45deg) translate(5px,5px);
+}
+
+.burger.active span:nth-child(2)
+{
+opacity: 0;
+}
+.burger.active span:nth-child(3)
+{
+transform: rotate(-45deg) translate(7px,-6px);
+}
+
+
+@media screen and (max-width:900px)
+{
+    .burger
+    {display: flex;}
+}
+
+.nav-links
+{
+   position: fixed; 
+   top:70px;
+   left: -100%;
+   width: 100%;
+   height: calc(100vh-70px);
+   background: blue;
+   flex-direction: column;
+   align-items: center;
+   transition: left 0.3s ease;
+   padding: 20px 0;
+}
+.nav-links.active
+{
+left: 0;
+}
+.nav-links li
+{
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid red;
+}
+.nav-links a
+{
+    padding: 20px;
+    font-size: 20px;
+}
+.nav-links a:hover
+{
+ background-color: #ff8e53; 
+ transform: translateX(10px);  
+}
+
+
+</style>
+
+</head>
+<body>
+<nav class="top-nav">
+<div class="nav-container">
+<a href="6.html" class="logo">Кото-факты</a>
+
+<div class="burger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="forma.html">Главная</a></li>
+<li><a href="antikliker.html">Все факты</a></li>
+<li><a href="foto.html">Галерея</a></li>
+<li><a href="animation.html">О нас</a></li>
+</ul>
+</div>
+</nav>
+   
+<section>
+<h1>Интересные факты о котах</h1>
+<hr>
+<h2>Портфолио фото котов</h2>
+<div class="row">
+   
+
+    <div class="column">
+        <div class="content">
+<a target="_blank" href="222.jpg">
+    <img src="222.jpg">
+</a>
+<h3>Мейн-кун факт 1</h3>
+<p> Среди мейн-кунов часто встречаются полидакты
+Полидактилия – это генная мутация, в результате которой у эмбриона развивается больше пальцев, чем обычно. Это явление встречается не только у животных, но и у людей. И довольно часто оно встречается у мейн-кунов. 
+</p>
+        </div>
+    </div>
+
+
+ <div class="column">
+        <div class="content">
+<a target="_blank" href="333.jpg">
+    <img src="333.jpg">
+</a>
+<h3>Мейн-кун факт 2</h3>
+<p> Помимо «лишних» пальцев, лапы мейн-кунов примечательны еще и тем, что они очень подвижны. Кошки пользуются ими практически как обезьянки: они могут держать игрушки в лапах, а также подцеплять ими пищу.
+</p>
+        </div>
+    </div>
+
+
+     <div class="column">
+        <div class="content">
+<a target="_blank" href="1.jpg">
+    <img src="1.jpg">
+</a>
+<h3>Мейн-кун факт 3</h3>
+<p> У мейн-кунов самые длинные хвосты
+
+И не относительно других пород, конечно, а относительно собственного туловища. Размер хвоста даже может быть равен длине туловища кошки!
+</p>
+        </div>
+    </div>
+
+
+
+     <div class="column">
+        <div class="content">
+<a target="_blank" href="3.jpeg">
+    <img src="3.jpeg">
+</a>
+<h3>Мейн-кун факт 4</h3>
+<p> Мейн-куны – практически собаки
+
+По крайней мере, по характеру уж точно! Они привязываются к своим хозяевам, даже несмотря на свой независимый характер. Кроме того, они легко дрессируются, поэтому с радостью научатся различным командам
+</p>
+        </div>
+    </div>
+
+
+</div>
+
+
+        <div class="content">
+<a target="_blank" href="111.jpg">
+    <img src="111.jpg">
+</a>
+<h3>Мейн-кун факт 5</h3>
+<p> Мейн-куны обожают воду
+
+В отличие от большинства других кошек, представители этой породы любят купаться и играть с водой. Поэтому не отказывайте вашему мейн-куну в этом удовольствии!
+</p>
+        </div>
+  
+
+
+</section>   
+    
+<script>
+function toggleMenu() {
+    // Находим бургер (три полоски) на странице
+    const burger = document.querySelector('.burger');
+    // Находим само меню со ссылками
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Добавляем или убираем класс "active" у бургера (полоски превращаются в крестик)
+    burger.classList.toggle('active');
+    // Добавляем или убираем класс "active" у меню (меню выезжает или прячется)
+    navLinks.classList.toggle('active');
+}
+
+// ЭТА ФУНКЦИЯ ЗАКРЫВАЕТ МЕНЮ
+function closeMenu() {
+    // Находим бургер (три полоски)
+    const burger = document.querySelector('.burger');
+    // Находим само меню
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Если бургер и меню существуют на странице
+    if (burger && navLinks) {
+        // Убираем класс "active" у бургера (крестик превращается обратно в полоски)
+        burger.classList.remove('active');
+        // Убираем класс "active" у меню (меню прячется)
+        navLinks.classList.remove('active');
+    }
+}
+
+// ЗАКРЫВАЕМ МЕНЮ, КОГДА НАЖИМАЕМ НА ССЫЛКУ (на телефоне)
+// Находим все ссылки в меню и для каждой делаем следующее:
+document.querySelectorAll('.nav-links a').forEach(link => {
+    // Добавляем обработчик события "клик" для каждой ссылки
+    link.addEventListener('click', function() {
+        // Если ширина экрана меньше или равна 900px (это телефон)
+        if (window.innerWidth <= 900) {
+            closeMenu(); // Закрываем меню
+        }
+    });
+});
+
+// ПРИ ИЗМЕНЕНИИ РАЗМЕРА ОКНА ЗАКРЫВАЕМ МЕНЮ
+// Следим за изменением размера окна браузера
+window.addEventListener('resize', function() {
+    // Если ширина стала больше 900px (телефон повернули или развернули на компьютере)
+    if (window.innerWidth > 900) {
+        closeMenu(); // Закрываем меню, если оно было открыто
+    }
+});
+
+</script> <!-- Конец JavaScript кода -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>
